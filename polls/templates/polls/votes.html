@@ -1,0 +1,9 @@
+<h1><strong> Response is Successfully Recorded!</strong></h1>
+
+<h2>{{ question1.question_text}}</h2>
+
+   {% for i in answer_list %}
+        {{ i.choice }} ----> {{ i.votes }}<br>
+
+    {% endfor %}
+

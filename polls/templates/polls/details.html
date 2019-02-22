@@ -1,0 +1,17 @@
+
+	<h1>{{ queobj.question_text }}</h1>
+
+
+<form action="/polls/{{ queobj.id }}/votes" method="post">
+{% csrf_token %}
+{% for choices in answer_list %}
+	<input type="radio" name="choices" id="choices{{ forloop.counter }}" value="{{choices.choice}}">{{ choices.choice }}</label><br />
+{% endfor %}
+
+<input type="submit" value="Vote" />
+
+<ul>
+{% for choices in answer_list.choice_set.all %}
+	<li>{{ choices.choice }}</li>
+{% endfor %}
+</ul>

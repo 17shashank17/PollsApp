@@ -1,0 +1,9 @@
+{% if query_list %}
+    {% for question in query_list %}
+        <h2><li><a href="/polls/{{ question.id }}/">
+            <strong>{{ question.question_text }}</strong></a>
+        </li></h2>
+    {% endfor %}
+{% else %}
+        <p>No polls available</p>
+{% endif %}
